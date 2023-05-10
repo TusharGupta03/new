@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-image: url('./images/Untitled (1).png');
+  background-size: cover;
   min-height: 100vh;
+  max-width: 100vw;
+  /* background-position: center; */
+  background-repeat: round;
+  background-attachment: fixed;
+  /* resize: both; */
+  /* position: relative; */
+}
+
+.navbar {
+  padding: 22px 2vw;
+  display: flex;
+  width: 96vw;
+}
+
+.logo {
+  margin-left: 5vw;
+  width: 14vw;
+}
+
+.space {
+  width: 30vw;
+
+}
+
+.navbar-components {
+  display: flex;
+}
+
+.component {
+  /* color: wheat; */
+  color: #571419;
+  font-size: 26px;
+  font-family: 'Lobster', cursive;
+  font-family: 'Pacifico', cursive;
+  padding: 0vh 1vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.underline {
+  background-color: #7e2127;
+  height: 2px;
+  width: 0%;
 }
 
-@keyframes App-logo-spin {
+.login {
+  margin-left: 5vw;
+  font-size: 20px;
+  padding: 4px 0px;
+}
+
+.sign-up {
+  margin: 0px 1vw;
+  font-size: 20px;
+  padding: 4px 0px;
+}
+
+a {
+  text-decoration: none;
+  /* color: wheat; */
+  color: #571419;
+  border-width: 0px;
+}
+
+@keyframes underline-motion {
   from {
-    transform: rotate(0deg);
+    width: 0%;
   }
+
   to {
-    transform: rotate(360deg);
+    width: 100%;
+  }
+}
+
+#home:hover .underline {
+  animation-name: underline-motion;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#contact:hover .underline {
+  animation-name: underline-motion;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#about:hover .underline {
+  animation-name: underline-motion;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#reviews:hover .underline {
+  animation-name: underline-motion;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.content {
+
+  display: flex;
+  width: 100vw;
+}
+
+.space2 {
+  width: 50vw;
+}
+
+.heart {
+  /* margin: 18vh 66vw; */
+  /* position: absolute; */
+}
+
+.heart-img {
+  margin: 16vh 16vw;
+
+  width: 108px;
+  height: 108px;
+  animation: heart-img-motion 1s ease infinite;
+}
+
+@keyframes heart-img-motion {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+
+  100% {
+    transform: scale(1, 1);
   }
 }
