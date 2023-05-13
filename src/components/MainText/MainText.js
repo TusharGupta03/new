@@ -1,6 +1,7 @@
 import React from 'react'
-import heart from '../images/heart.png'
-import heart2 from '../images/heart2.png'
+import heart from '../../images/heart.png'
+import heart2 from '../../images/heart2.png'
+import './MainText.css'
 import { useState } from "react";
 
 
@@ -25,11 +26,11 @@ export default function MainText() {
                         it's never too late to find a soulmate and fall in love <br /> again ,find your soulmate now
                     </div>
                     <div className="find">
-                        <img src={heart2} className='heart2-left' alt="" />
+                        <img src={heart2} className='heart2-img' alt="" />
                         <div className="space3">
-                            {find_love ? <button className='find-button'> <strong>Find Your Love</strong> </button> : <div></div>}
+                            {find_love ? <button className='find-button'> <strong>Find Your Love</strong> </button> : null}
                         </div>
-                        <img src={heart2} className='heart2-right' alt="" />
+                        <img src={heart2} className='heart2-img' alt="" />
                     </div>
                 </div>
                 <div className="heart">

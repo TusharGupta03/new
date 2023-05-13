@@ -1,0 +1,19 @@
+.social {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 75px;
+  }
+  
+  .space4 {
+    height: 65vh;
+  }
+  
+  .social-points {
+    margin: 0.5vw 0vw;
+  }
+  
+  .points {
+    width: 2vw;
+    height: 4vh;
+  }

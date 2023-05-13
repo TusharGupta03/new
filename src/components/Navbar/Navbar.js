@@ -1,5 +1,6 @@
 import React from 'react'
-import logo from '../images/flirtify-low-resolution-logo-white-on-transparent-background.png'
+import logo from '../../images/flirtify-logo.png'
+import './Navbar.css'
 
 export default function Navbar() {
     return (
@@ -16,8 +17,14 @@ export default function Navbar() {
                 <div className="component" id='about'><a href='/'>About</a><div className="underline"></div></div>
                 <div className="component" id='reviews'><a href='/'>Reviews</a><div className="underline"></div></div>
 
-                <div className="component login">LogIn</div>
-                <div className="component sign-up ">SignUp</div>
+                <div className="component login"><button className="login-button">
+                    LogIn</button>
+                </div>
+                <div className="component sign-up ">
+                    <button className="sign-up-button">
+                        SignUp
+                    </button>
+                </div>
 
             </div>
         </div>
