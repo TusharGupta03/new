@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../../images/flirtify-logo.png'
+import { Link } from 'react-router-dom'
+
 import './Navbar.css'
 
 export default function Navbar() {
@@ -22,7 +24,7 @@ export default function Navbar() {
                 </div>
                 <div className="component sign-up ">
                     <button className="sign-up-button">
-                        SignUp
+                        <Link to='/signup'>SignUp</Link>
                     </button>
                 </div>
 

@@ -1,0 +1,112 @@
+.sign-up-page {
+    background-image: url('../../images/—Pngtree—love\ paper\ cut\ couple\ plant_1310876.png');
+    background-size: cover;
+    min-height: 100vh;
+    max-width: 100vw;
+    /* background-position: center; */
+    /* background-size: 100vw 100vh; */
+    background-repeat: round;
+    background-attachment: scroll;
+    /* resize: both; */
+    /* position: relative; */
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+}
+
+.logo2 {
+    margin-top: 3vh;
+    margin-left: 5vw;
+    width: 14vw;
+}
+
+.sign-Up {
+
+    width: 23vw;
+    margin: 8vh auto;
+    height: auto;
+    border: 3px solid #7e2127;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.heading {
+    text-align: center;
+    color: rgb(214, 53, 4);
+    font-size: 2.2vw;
+    font-family: 'Lobster', cursive;
+    font-family: 'Pacifico', cursive;
+}
+
+.details-heading {
+    color: rgb(214, 53, 4);
+    font-family: 'Lobster', cursive;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5vw;
+    margin: 3vh 3.5vw;
+    margin-bottom: 0vh;
+
+}
+
+.input-details {
+    margin: 0vh 3.5vw;
+    width: 15.5vw;
+    height: 27px;
+    border: 0px;
+    border-bottom: 2px solid #7e2127;
+    border-radius: 4px;
+    font-size: 1vw;
+
+}
+
+.input-details:focus {
+    outline: none;
+}
+
+
+.submit {
+    margin: 4vh 8vw;
+}
+
+.submit-button {
+    font-size: 1.4vw;
+    font-family: 'Lobster', cursive;
+    font-family: 'Pacifico', cursive;
+    width: 8vw;
+    background-color: #f6d1d3;
+    color:rgb(214, 53, 4);
+    border: 2px solid #7e2127;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.for-bac
+{
+    display: flex;
+    flex-direction: row;
+}
+.intrest
+{
+    margin: 0vh 2vw;
+}
+
+.intrest-button{
+
+    border: 2px solid #d76e75;
+    margin: 0.8vh 1vw;
+    border-radius: 50px;
+    font-size: 1.2vw;
+    padding: 1vh 1vw;
+
+}
+.sign-Up-Intrest {
+
+    margin: 8vh 13vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
