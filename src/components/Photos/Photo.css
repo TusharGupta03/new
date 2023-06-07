@@ -1,0 +1,56 @@
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.container {
+    margin-top: 0px;
+}
+.cross
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2vw;
+}
+.before-upload 
+{
+    height: 17vw;
+    width: 12vw;
+    border: 2px solid grey;
+    border-style: dashed ;
+    border-radius: 10px;
+    background-color: rgb(235, 232, 232);
+    font-size: 1.4vw;
+}
+.image {
+    
+    height: 17vw;
+    width: 12vw;
+    margin: auto;
+    border-radius:10px ;
+}
+.cross2
+{
+    position: absolute;
+    top: 35%;
+    width: auto;
+    font-size: 2vw;
+    text-align: center;
+    color: grey;
+    z-index: 0;
+}
+.upload 
+{
+    margin: auto auto;
+}
+.input-file
+{
+   display: none;
+}
+span 
+{
+    margin-top: 50px;
+}
