@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../images/flirtify-logo.png'
+import logo from '../../../images/flirtify-logo.png'
 import { Link } from 'react-router-dom'
 
 import './Navbar.css'
@@ -20,7 +20,8 @@ export default function Navbar() {
                 <div className="component" id='reviews'><a href='/'>Reviews</a><div className="underline"></div></div>
 
                 <div className="component login"><button className="login-button">
-                    LogIn</button>
+                    <Link to='/login'>LogIn</Link>
+                </button>
                 </div>
                 <div className="component sign-up ">
                     <button className="sign-up-button">

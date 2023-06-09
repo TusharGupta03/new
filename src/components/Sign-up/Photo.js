@@ -12,7 +12,7 @@ export default function Photo(props) {
                     : <div> <div className="before-upload" id={props.index} onClick={props.Handel_browse}>
 
                         <div className="cross2" id={props.index}   >
-                            Click  Here Your Pic
+                            Upload  Your Pic Here
                         </div>
 
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import heart from '../../images/heart.png'
-import heart2 from '../../images/heart2.png'
+import heart from '../../../images/heart.png'
+import heart2 from '../../../images/heart2.png'
 import './MainText.css'
 import { useState } from "react";
 

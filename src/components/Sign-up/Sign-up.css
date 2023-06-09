@@ -100,6 +100,18 @@
     font-family: 'Lobster', cursive;
     font-family: 'Pacifico', cursive;
     width: 8vw;
+    background-color: #fceced;
+    color: rgb(221, 165, 148);
+    border: 2px solid rgb(221, 165, 148);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.next-button-enabled {
+    font-size: 1.4vw;
+    font-family: 'Lobster', cursive;
+    font-family: 'Pacifico', cursive;
+    width: 8vw;
     background-color: #f6d1d3;
     color: rgb(214, 53, 4);
     border: 2px solid rgb(214, 53, 4);

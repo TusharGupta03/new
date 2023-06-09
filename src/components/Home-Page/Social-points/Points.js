@@ -1,8 +1,8 @@
 import React from 'react'
-import facebook from '../../images/facebook.png'
-import instagram from '../../images/instagram.png'
-import twitter from '../../images/twitter.png'
-import mail from '../../images/email.png'
+import facebook from '../../../images/facebook.png'
+import instagram from '../../../images/instagram.png'
+import twitter from '../../../images/twitter.png'
+import mail from '../../../images/email.png'
 import './Points.css'
 
 export default function POints() {
