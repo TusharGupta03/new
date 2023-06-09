@@ -11,7 +11,7 @@ import { Base64 } from "js-base64";
 export default function Signup() {
     document.getElementsByTagName("body")[0].style.overflow = "auto";
 
-    const [page, setpage] = useState(4);
+    const [page, setpage] = useState(1);
 
     const [email, setemail] = useState("");
     const [password, setpassowrd] = useState("");
@@ -19,8 +19,7 @@ export default function Signup() {
     const [date, setdate] = useState("");
     const [gender, setgender] = useState("");
     const [intrestarr, setIntrest] = useState([]);
-    const index = ['0', '1', '2']
-    const index2 = ['3', '4', '5']
+   
 
 
     function intrest_handel(event) {
@@ -57,6 +56,15 @@ export default function Signup() {
             setpage(page + 1);
         }
     }
+    function Enter(e) {
+        console.log("enter hitted")
+        if (e.key === "Enter" && document.getElementsByClassName("next-button-enabled").length > 0) {
+            document.getElementsByClassName("next-button-enabled")[0].click();
+
+        }
+    }
+
+
 
     function Handel_browse(event) {
         let a = event.target.id;
@@ -75,6 +83,7 @@ export default function Signup() {
                 setPreviewUrl(new_arr);
             };
             reader.readAsDataURL(file);
+            console.log(previewUrl)
         } else if (e.target.type === "email") {
             setemail(e.target.value);
         } else if (
@@ -109,6 +118,7 @@ export default function Signup() {
                     password={password}
                     NextButton={NextButton}
                     Handel_onchange={Handel_onchange}
+                    Enter={Enter}
                 />
             </>
         );
@@ -157,32 +167,18 @@ export default function Signup() {
                         </div>
                         <div className="photos-box">
                             <div className="photos">
+                                <Photo index="0" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="0" />
+                                <Photo index="1" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="1" />
+                                <Photo index="2" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="2" />
 
 
-                                {index.map(i => {
-                                    return <Photo
-                                        key={i}
-                                        index={i}
-                                        previewUrl={previewUrl}
-                                        Handel_browse={Handel_browse}
-                                        Handel_onchange={Handel_onchange}
-                                        Handel_cross={Handel_cross}
-                                        name={i} />
-                                })}
+
                             </div>
-                            <div className="photos" id="photos2">
 
-
-                                {index2.map(i => {
-                                    return <Photo
-                                        key={i}
-                                        index={i}
-                                        previewUrl={previewUrl}
-                                        Handel_browse={Handel_browse}
-                                        Handel_onchange={Handel_onchange}
-                                        Handel_cross={Handel_cross}
-                                        name={i} />
-                                })}
+                            <div className="photos" id='photos2'>
+                                <Photo index="3" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="3" />
+                                <Photo index="4" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="4" />
+                                <Photo index="5" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="5" />
                             </div>
                         </div>
                         <div className="for-bac">

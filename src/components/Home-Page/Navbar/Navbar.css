@@ -20,8 +20,8 @@
   }
   
   .component {
-    /* color: wheat; */
-    color: wheat;
+    /* color: rgb(214, 53, 4);; */
+    color: rgb(214, 53, 4);;
     font-size: 2vw;
     font-family: 'Lobster', cursive;
     font-family: 'Pacifico', cursive;
@@ -46,9 +46,9 @@
     font-size: 1.5vw;
     padding: 0px 1vw;
     border-radius: 10px;
-    background-color: #7e2127;
+    background-color: rgb(216, 201, 201);
     font-family: 'Pacifico', cursive;
-    color: wheat;
+    color: rgb(214, 53, 4);;
     border: 0px;
   
   }
@@ -62,17 +62,17 @@
     font-size: 1.5vw;
     padding: 0px 1vw;
     border-radius: 10px;
-    background-color: #7e2127;
+    background-color: rgb(240, 237, 237);
     font-family: 'Pacifico', cursive;
-    color: wheat;
+    color: rgb(214, 53, 4);;
     border: 0px;
   }
   
   
   a {
     text-decoration: none;
-    /* color: wheat; */
-    color: wheat;
+    /* color: rgb(214, 53, 4);; */
+    color: rgb(214, 53, 4);;
     border-width: 0px;
   }
   

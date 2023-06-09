@@ -15,7 +15,7 @@
     margin-bottom: 0vh;
     /* font-family: 'Lobster', cursive; */
     font-family: 'Pacifico', cursive;
-    color: wheat;
+    color: rgb(214, 53, 4);
     font-size: 3.6vw;
     padding: 0vh 2vw;
   }
@@ -24,7 +24,7 @@
     margin: 1vh 13vw;
     /* font-family: 'Lobster', cursive; */
     font-family: 'Pacifico', cursive;
-    color: wheat;
+    color: rgb(214, 53, 4);
     font-size: 1.2vw;
     padding: 0vh 2vw;
   
@@ -57,9 +57,9 @@
     height: 6vh;
     border-radius: 50px;
     font-family: 'Pacifico', cursive;
-    color: wheat;
+    color: rgb(214, 53, 4);
     font-size: 1.3vw;
-    background-color: #7e2127;
+    background-color: rgb(240, 237, 237);
     border: 0px;
     animation-name: find-love-button;
     animation-duration: 2s;

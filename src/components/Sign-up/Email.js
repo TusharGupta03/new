@@ -33,17 +33,17 @@ export default function Email(props) {
                         Email
                     </div>
                     <div className="input">
-                        <input type="email" className='input-details' value={props.email} onChange={props.Handel_onchange} />
+                        <input type="email" className='input-details' value={props.email} onChange={props.Handel_onchange} onKeyDown={props.Enter} />
                     </div>
                     <div className="details-heading">
                         Password
                     </div>
                     <div className="input" id='show-password'>
-                        <input type={type} className='input-details' id='pass' value={props.passsword} onChange={props.Handel_onchange} />
+                        <input type={type} className='input-details' id='pass' value={props.passsword} onChange={props.Handel_onchange} onKeyDown={props.Enter} />
                         <img src={eye} alt="" className="show" onClick={Handel_show} />
                     </div>
                     <div className="next">
-                        {(props.email !== "" && props.password.length>=8) ? <button className='next-button-enabled' type="submit" onClick={props.NextButton}>Next</button> : <button className='next-button' disabled type="submit" onClick={props.NextButton}>Next</button>
+                        {(props.email !== "" && props.password.length>=8) ? <button className='next-button-enabled' type="submit" onClick={props.NextButton} >Next</button> : <button className='next-button' disabled type="submit" onClick={props.NextButton}>Next</button>
                         }
 
                     </div>
