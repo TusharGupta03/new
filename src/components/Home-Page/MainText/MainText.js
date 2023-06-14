@@ -1,5 +1,4 @@
 import React from 'react'
-import heart from '../../../images/heart.png'
 import heart2 from '../../../images/heart2.png'
 import './MainText.css'
 import { useState } from "react";
@@ -11,7 +10,7 @@ export default function MainText() {
     const [find_love, set_find_love] = useState(false);
     setTimeout(function () {
         set_find_love(true);
-        console.log(find_love)
+        // console.log(find_love)
     }, 2000)
 
 
@@ -33,10 +32,7 @@ export default function MainText() {
                         <img src={heart2} className='heart2-img' alt="" />
                     </div>
                 </div>
-                <div className="heart">
-                    <img src={heart} className='heart-img' alt="" />
-                </div>
-
+                
             </div>
 
         </>

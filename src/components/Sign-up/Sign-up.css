@@ -12,6 +12,7 @@
     /* overflow: hidden; */
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .logo2 {
@@ -19,6 +20,8 @@
     margin-left: 5vw;
     width: 14vw;
 }
+
+
 
 .sign-Up {
 
@@ -29,6 +32,8 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(255,255,255,)0.13;
+    backdrop-filter: blur(10px);
 
 }
 
@@ -82,6 +87,7 @@
     position: relative;
 }
 
+
 .show {
 
     position: absolute;
@@ -89,6 +95,11 @@
     right: 19%;
     height: 35px;
     width: 1.4vw;
+}
+.show:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
 }
 
 .next {
@@ -117,6 +128,11 @@
     border: 2px solid rgb(214, 53, 4);
     border-radius: 5px;
     cursor: pointer;
+}
+.next-button-enabled:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
 }
 
 .for-bac {

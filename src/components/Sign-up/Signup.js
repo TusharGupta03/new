@@ -6,7 +6,9 @@ import Photo from "./Photo";
 import Email from "./Email";
 import Personal from "./Personal";
 import Intrest from "./Intrest";
-import { Base64 } from "js-base64";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Home-Page/Navbar/Navbar";
+
 
 export default function Signup() {
     document.getElementsByTagName("body")[0].style.overflow = "auto";
@@ -19,8 +21,45 @@ export default function Signup() {
     const [date, setdate] = useState("");
     const [gender, setgender] = useState("");
     const [intrestarr, setIntrest] = useState([]);
-   
+    const [previewUrl, setPreviewUrl] = useState([]);
+    const [otp, setotp] = useState("")
+    const [userotp, setuserotp] = useState("")
+    const nav = useNavigate()
 
+
+
+    function Handel_onchange(e) {
+        if (e.target.type === "file" && e.target.files[0] != null) {
+            let a = e.target.name;
+            const file = e.target.files[0];
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                let new_arr = [...previewUrl];
+                new_arr[a] = e.target.result;
+                setPreviewUrl(new_arr);
+            };
+            reader.readAsDataURL(file);
+
+        } else if (e.target.type === "email") {
+            setemail(e.target.value);
+        } else if (
+            (e.target.type === "password" || e.target.type === "text") &&
+            e.target.id === "pass"
+        ) {
+            setpassowrd(e.target.value);
+        } else if (e.target.type === "text" && e.target.id === "otp") {
+            setuserotp(e.target.value);
+        } else if (e.target.type === "date") {
+            setdate(e.target.value)
+        } else if (e.target.type === "text") {
+            setname(e.target.value);
+        } else if (e.target.type === "date") {
+            setdate(e.target.value);
+        } else if (e.target.name === "gender") {
+            setgender(e.target.value);
+        }
+    }
 
     function intrest_handel(event) {
         let intrest = [...intrestarr];
@@ -32,38 +71,8 @@ export default function Signup() {
             intrest.push(event.target.innerHTML);
             setIntrest(intrest);
             event.target.style.border = "3px solid #7e2127";
-            console.log(intrest);
         }
     }
-
-    const [previewUrl, setPreviewUrl] = useState([
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-    ]);
-
-    function NextButton() {
-        if (page === 1) {
-            var encode = Base64.encode(password);
-
-            setpassowrd(encode);
-            console.log("inside");
-            setpage(page + 1);
-        } else {
-            setpage(page + 1);
-        }
-    }
-    function Enter(e) {
-        console.log("enter hitted")
-        if (e.key === "Enter" && document.getElementsByClassName("next-button-enabled").length > 0) {
-            document.getElementsByClassName("next-button-enabled")[0].click();
-
-        }
-    }
-
 
 
     function Handel_browse(event) {
@@ -71,34 +80,7 @@ export default function Signup() {
         document.getElementsByClassName("input-file")[a].click();
     }
 
-    function Handel_onchange(e) {
-        if (e.target.type === "file") {
-            let a = e.target.name;
-            const file = e.target.files[0];
 
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                let new_arr = [...previewUrl];
-                new_arr[a] = e.target.result;
-                setPreviewUrl(new_arr);
-            };
-            reader.readAsDataURL(file);
-            console.log(previewUrl)
-        } else if (e.target.type === "email") {
-            setemail(e.target.value);
-        } else if (
-            (e.target.type === "password" || e.target.type === "text") &&
-            e.target.id === "pass"
-        ) {
-            setpassowrd(e.target.value);
-        } else if (e.target.type === "text") {
-            setname(e.target.value);
-        } else if (e.target.type === "date") {
-            setdate(e.target.value);
-        } else if (e.target.name === "gender") {
-            setgender(e.target.value);
-        }
-    }
 
     function Handel_cross(e) {
         let a = e.target.id;
@@ -107,18 +89,67 @@ export default function Signup() {
         setPreviewUrl(new_arr);
     }
 
+    function NextButton() {
+
+
+        setpage(page + 1);
+
+
+
+
+    }
+    function SubmitButton() {
+        const Details = {
+            email: email,
+            password: password,
+            name: name,
+            dob: date,
+            gender: gender,
+            intrest: intrestarr,
+            photo: previewUrl
+
+        }
+        fetch('http://localhost:8000/dating/user/new_user', {
+
+            method: 'POST',
+            body: JSON.stringify(Details),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+            withCredentials: true,
+            credentials: 'include'
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === 200) {
+                    nav("/login")
+                }
+                else {
+                    console.log("Error in uploading ....")
+                }
+
+
+
+            })
+
+    }
+
+
+
     if (page === 1) {
         return (
             <>
                 <Email
                     title={"Sign Up"}
+                    userotp={userotp}
+                    setotp={setotp}
+                    otp={otp}
                     logo={logo}
-                    email={email}
                     page={page}
+                    email={email}
                     password={password}
                     NextButton={NextButton}
                     Handel_onchange={Handel_onchange}
-                    Enter={Enter}
                 />
             </>
         );
@@ -142,9 +173,7 @@ export default function Signup() {
         return (
             <>
                 <div className="sign-up-page">
-                    <div className="logo1">
-                        <img className="logo2" src={logo} alt="" />
-                    </div>
+                    <Navbar loggedin="false" />
                     <Intrest
                         intrest_handel={intrest_handel}
                         NextButton={NextButton}
@@ -158,52 +187,79 @@ export default function Signup() {
         return (
             <>
                 <div className="sign-up-page">
-                    <div className="logo1">
-                        <img className="logo2" src={logo} alt="" />
-                    </div>
+                    <Navbar loggedin="false" />
+
                     <div className="sign-Up-Intrest">
                         <div className="heading">
                             Upload Photos <h6>(Try to upload vertical and solo photo)</h6>
                         </div>
                         <div className="photos-box">
                             <div className="photos">
-                                <Photo index="0" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="0" />
-                                <Photo index="1" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="1" />
-                                <Photo index="2" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="2" />
-
-
-
+                                <Photo
+                                    index="0"
+                                    previewUrl={previewUrl}
+                                    Handel_browse={Handel_browse}
+                                    Handel_onchange={Handel_onchange}
+                                    Handel_cross={Handel_cross}
+                                />
+                                <Photo
+                                    index="1"
+                                    previewUrl={previewUrl}
+                                    Handel_browse={Handel_browse}
+                                    Handel_onchange={Handel_onchange}
+                                    Handel_cross={Handel_cross}
+                                />
+                                <Photo
+                                    index="2"
+                                    previewUrl={previewUrl}
+                                    Handel_browse={Handel_browse}
+                                    Handel_onchange={Handel_onchange}
+                                    Handel_cross={Handel_cross}
+                                />
                             </div>
 
-                            <div className="photos" id='photos2'>
-                                <Photo index="3" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="3" />
-                                <Photo index="4" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="4" />
-                                <Photo index="5" previewUrl={previewUrl} Handel_browse={Handel_browse} Handel_onchange={Handel_onchange} Handel_cross={Handel_cross} name="5" />
+                            <div className="photos" id="photos2">
+                                <Photo
+                                    index="3"
+                                    previewUrl={previewUrl}
+                                    Handel_browse={Handel_browse}
+                                    Handel_onchange={Handel_onchange}
+                                    Handel_cross={Handel_cross}
+                                />
+                                <Photo
+                                    index="4"
+                                    previewUrl={previewUrl}
+                                    Handel_browse={Handel_browse}
+                                    Handel_onchange={Handel_onchange}
+                                    Handel_cross={Handel_cross}
+                                />
+                                <Photo
+                                    index="5"
+                                    previewUrl={previewUrl}
+                                    Handel_browse={Handel_browse}
+                                    Handel_onchange={Handel_onchange}
+                                    Handel_cross={Handel_cross}
+                                />
                             </div>
                         </div>
                         <div className="for-bac">
                             <div className="next-intrest">
-                                {previewUrl[0] === null &&
-                                    previewUrl[1] === null &&
-                                    previewUrl[2] === null &&
-                                    previewUrl[3] === null &&
-                                    previewUrl[4] === null &&
-                                    previewUrl[5] === null ? (
+                                {previewUrl.length > 0 ? (
+                                    <button
+                                        className="next-button-enabled"
+                                        type="submit"
+                                        onClick={SubmitButton}
+                                    >
+                                        Upload
+                                    </button>
+                                ) : (
                                     <button
                                         className="next-button"
                                         disabled
                                         type="submit"
-                                        onClick={NextButton}
+
                                     >
                                         Next
-                                    </button>
-                                ) : (
-                                    <button
-                                        className="next-button-enabled"
-                                        type="submit"
-                                        onClick={NextButton}
-                                    >
-                                        Get Otp
                                     </button>
                                 )}
                             </div>

@@ -9,11 +9,12 @@
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
-    background-color: #7e2127;
+    background-color: #d8535c;
     animation-name: main;
     animation-duration: 3s;
     animation-fill-mode: forwards;
     animation-iteration-count: 3;
+    background-color: #d8535c;
     /* overflow-y: auto; */
 
 
@@ -29,7 +30,7 @@
     -moz-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-    background-color: #7e2127;
+    background-color: #d8535c;
     /* overflow-y: hidden; */
 }
 

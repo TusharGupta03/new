@@ -1,154 +1,160 @@
 .content {
 
-    display: flex;
-    width: 96vw;
+  display: flex;
+  width: 96vw;
+}
+
+.space2 {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.line {
+  margin: 11vh 13vw;
+  margin-bottom: 0vh;
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Pacifico', cursive;
+  color: rgb(214, 53, 4);
+  font-size: 7vh;
+  padding: 0vh 2vw;
+}
+
+.application {
+  margin: 1vh 13vw;
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Pacifico', cursive;
+  color: rgb(214, 53, 4);
+  font-size: 2.5vh;
+  padding: 0vh 2vw;
+
+}
+
+.find {
+  margin: 2vh 9vw;
+  display: flex;
+  animation-name: find-love;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+
+}
+
+.space3 {
+  width: 20vw;
+  animation-name: find-love-space;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  text-align: center;
+  padding: 2vh 0vw;
+
+
+}
+
+.find-button {
+  width: 12vw;
+  height: 6vh;
+  border-radius: 50px;
+  font-family: 'Pacifico', cursive;
+  color: rgb(214, 53, 4);
+  font-size: 1.3vw;
+  background-color: rgb(240, 237, 237);
+  border: 0px;
+  animation-name: find-love-button;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  cursor: pointer;
+
+}
+
+.find-button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.heart2-img {
+  width: 4vw;
+  height: 9vh;
+}
+
+
+
+@keyframes find-love {
+  0% {
+    padding: 0vh 0vw;
   }
-  
-  .space2 {
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
+
+  50% {
+    padding: 0vh 10vw;
+
+
   }
-  
-  .line {
-    margin: 11vh 13vw;
-    margin-bottom: 0vh;
-    /* font-family: 'Lobster', cursive; */
-    font-family: 'Pacifico', cursive;
-    color: rgb(214, 53, 4);
-    font-size: 3.6vw;
-    padding: 0vh 2vw;
+
+  100% {
+    padding: 0vh 6vw;
+
+
   }
-  
-  .application {
-    margin: 1vh 13vw;
-    /* font-family: 'Lobster', cursive; */
-    font-family: 'Pacifico', cursive;
-    color: rgb(214, 53, 4);
-    font-size: 1.2vw;
-    padding: 0vh 2vw;
-  
-  }
-  
-  .find {
-    margin: 2vh 9vw;
-    display: flex;
-    animation-name: find-love;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-  
-  }
-  
-  .space3 {
+}
+
+@keyframes find-love-space {
+  0% {
     width: 20vw;
-    animation-name: find-love-space;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    text-align: center;
-    padding: 2vh 0vw;
-  
-  
+
   }
-  
-  .find-button {
+
+  50% {
+    width: 0vw;
+
+
+  }
+
+  100% {
     width: 12vw;
-    height: 6vh;
-    border-radius: 50px;
-    font-family: 'Pacifico', cursive;
-    color: rgb(214, 53, 4);
+
+
+  }
+}
+
+@keyframes find-love-button {
+  0% {
+    width: 0vw;
+    font-size: 0vw;
+
+  }
+
+  100% {
+    width: 12vw;
     font-size: 1.3vw;
-    background-color: rgb(240, 237, 237);
-    border: 0px;
-    animation-name: find-love-button;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-  
+
   }
-  
-  .heart2-img {
-    width: 4vw;
-    height: 9vh;
+
+
+}
+
+
+
+.heart-img {
+  margin: 18vh 6vw;
+  margin-right: 0vw;
+
+  width: 108px;
+  height: 108px;
+  animation: heart-img-motion 1s ease infinite;
+}
+
+@keyframes heart-img-motion {
+  0% {
+    transform: scale(1, 1);
   }
-  
-  
-  
-  @keyframes find-love {
-    0% {
-      padding: 0vh 0vw;
-    }
-  
-    50% {
-      padding: 0vh 10vw;
-  
-  
-    }
-  
-    100% {
-      padding: 0vh 6vw;
-  
-  
-    }
+
+  50% {
+    transform: scale(1.2, 1.2);
   }
-  
-  @keyframes find-love-space {
-    0% {
-      width: 20vw;
-  
-    }
-  
-    50% {
-      width: 0vw;
-  
-  
-    }
-  
-    100% {
-      width: 12vw;
-  
-  
-    }
+
+  100% {
+    transform: scale(1, 1);
   }
-  
-  @keyframes find-love-button {
-    0% {
-      width: 0vw;
-      font-size: 0vw;
-  
-    }
-  
-    100% {
-      width: 12vw;
-      font-size: 1.3vw;
-  
-    }
-  
-  
-  }
-  
-  
-  
-  .heart-img {
-    margin: 18vh 6vw;
-    margin-right: 0vw;
-  
-    width: 108px;
-    height: 108px;
-    animation: heart-img-motion 1s ease infinite;
-  }
-  
-  @keyframes heart-img-motion {
-    0% {
-      transform: scale(1, 1);
-    }
-  
-    50% {
-      transform: scale(1.2, 1.2);
-    }
-  
-    100% {
-      transform: scale(1, 1);
-    }
-  }
+}
