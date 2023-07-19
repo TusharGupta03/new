@@ -61,7 +61,6 @@ export default function Login(props) {
                 else {
                     setstatus("404")
                 }
-                setdisplay(false)
 
 
 

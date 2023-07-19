@@ -35,6 +35,8 @@ export default function Navbar(props) {
                     setloggedin(false)
                 }
 
+                props.setdisplay(false)
+
 
 
             })
@@ -42,6 +44,7 @@ export default function Navbar(props) {
     }, [])
 
     function logout() {
+        props.setdisplay(true)
         fetch('https://projectbackend-ycya.onrender.com/dating/auth/logout', {
 
             method: 'GET',
@@ -61,6 +64,8 @@ export default function Navbar(props) {
                 else {
                     setloggedin(true)
                 }
+
+                props.setdisplay(false)
 
 
 

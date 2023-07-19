@@ -213,7 +213,7 @@ export default function Signup(props) {
 
         return (
             <>
-                {/* {display ? <Loader /> : null} */}
+                {display ? <Loader /> : null}
 
                 <div className="sign-up-page">
 
