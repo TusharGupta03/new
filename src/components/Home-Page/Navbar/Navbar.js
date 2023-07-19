@@ -18,6 +18,8 @@ export default function Navbar(props) {
 
 
     useEffect(() => {
+
+        setdisplay(true)
         fetch('https://projectbackend-ycya.onrender.com/dating/auth/token', {
 
             method: 'GET',
@@ -33,12 +35,13 @@ export default function Navbar(props) {
                     setloggedin(true)
                     setaccount(data.name)
                     setphoto(data.photo)
+                    setdisplay(false)
                 }
                 else {
                     setloggedin(false)
+                    setdisplay(false)
                 }
 
-                setdisplay(false)
 
 
 
