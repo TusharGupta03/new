@@ -50,7 +50,7 @@ export default function Navbar(props) {
     }, [])
 
     function logout() {
-        props.setdisplay(true)
+        setdisplay(true)
         fetch('https://projectbackend-ycya.onrender.com/dating/auth/logout', {
 
             method: 'GET',
