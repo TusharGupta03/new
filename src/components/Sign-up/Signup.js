@@ -103,6 +103,7 @@ export default function Signup(props) {
 
     }
     function SubmitButton() {
+        setdisplay(true)
         const Details = {
             email: email,
             password: password,
@@ -126,6 +127,7 @@ export default function Signup(props) {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status === 200) {
+                    setdisplay(false)
                     nav("/login")
                 }
                 else {

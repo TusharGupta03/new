@@ -34,6 +34,7 @@ export default function Login(props) {
         }
     }
     function NextButton() {
+        setdisplay(true)
         const details = {
             email: email,
             password: password
@@ -60,6 +61,7 @@ export default function Login(props) {
                 else {
                     setstatus("404")
                 }
+                setdisplay(false)
 
 
 
