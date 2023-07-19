@@ -6,15 +6,11 @@ import './Home.css'
 
 export default function Home(props) {
 
-  // setTimeout(() => {
-  //   setdisplay(false)
 
-  // }, 3600);
   return (
     <>
-     
       <div className='home'>
-        <Points /> <Navbar   /><MainText />
+        <Points /> <Navbar loggedin={props.loggedin} setloggedin={props.setloggedin} /><MainText />
       </div>
 
 
