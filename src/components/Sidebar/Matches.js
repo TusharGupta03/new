@@ -32,7 +32,7 @@ export default function Matches() {
 
   useEffect(() => {
     console.log("a")
-    fetch('http://localhost:8000/dating/matches/matched', {
+    fetch('https://projectbackend-ycya.onrender.com/dating/matches/matched', {
 
       method: 'GET',
       headers: {
@@ -84,7 +84,7 @@ export default function Matches() {
   function send_seen() {
 
     const id = { id: matches[i]._id }
-    fetch('http://localhost:8000/dating/matches/seened', {
+    fetch('https://projectbackend-ycya.onrender.com/dating/matches/seened', {
 
       method: 'POST',
       body: JSON.stringify(id),
@@ -107,7 +107,7 @@ export default function Matches() {
 
   function send_like() {
     const id = { id: matches[i]._id }
-    fetch('http://localhost:8000/dating/matches/liked', {
+    fetch('https://projectbackend-ycya.onrender.com/dating/matches/liked', {
 
       method: 'POST',
       body: JSON.stringify(id),

@@ -23,7 +23,7 @@ export default function Signup(props) {
     const [gender, setgender] = useState("");
     const [intrestarr, setIntrest] = useState([]);
     const [previewUrl, setPreviewUrl] = useState([]);
-    const [otp, setotp] = useState("123456")
+    const [otp, setotp] = useState("jhdghg")
     const [userotp, setuserotp] = useState("")
     const [display, setdisplay] = useState(true)
 
@@ -113,7 +113,7 @@ export default function Signup(props) {
             photo: previewUrl
 
         }
-        fetch('http://localhost:8000/dating/user/new_user', {
+        fetch('https://projectbackend-ycya.onrender.com/dating/user/new_user', {
 
             method: 'POST',
             body: JSON.stringify(Details),

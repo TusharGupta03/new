@@ -15,7 +15,7 @@ export default function Navbar(props) {
     const { setloggedin } = props
 
     useEffect(() => {
-        fetch('http://localhost:8000/dating/auth/token', {
+        fetch('https://projectbackend-ycya.onrender.com/dating/auth/token', {
 
             method: 'GET',
             headers: {
@@ -42,7 +42,7 @@ export default function Navbar(props) {
     }, [])
 
     function logout() {
-        fetch('http://localhost:8000/dating/auth/logout', {
+        fetch('https://projectbackend-ycya.onrender.com/dating/auth/logout', {
 
             method: 'GET',
             headers: {

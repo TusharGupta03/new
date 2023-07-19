@@ -27,7 +27,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         console.log("effect start here ")
-        fetch('http://localhost:8000/dating/matches/liked', {
+        fetch('https://projectbackend-ycya.onrender.com/dating/matches/liked', {
 
             method: 'GET',
             headers: {
@@ -64,7 +64,7 @@ export default function Dashboard() {
 
         function search() {
 
-            fetch('http://localhost:8000/dating/user/notification', {
+            fetch('https://projectbackend-ycya.onrender.com/dating/user/notification', {
 
                 method: 'GET',
                 headers: {

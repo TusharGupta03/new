@@ -2,7 +2,7 @@
   "name": "flirtify",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "https://projectbackend-ycya.onrender.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "buffer": "^6.0.3",
     "crypto-js": "^4.1.1",
     "full-age-calculator": "^0.0.4",
     "js-base64": "^3.7.5",
