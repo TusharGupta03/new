@@ -13,6 +13,8 @@ export default function Navbar(props) {
     const [account, setaccount] = useState()
     const [photo, setphoto] = useState()
     const { setloggedin } = props
+    const [display, setdisplay] = useState(true)
+
 
     useEffect(() => {
         fetch('https://projectbackend-ycya.onrender.com/dating/auth/token', {
@@ -35,7 +37,7 @@ export default function Navbar(props) {
                     setloggedin(false)
                 }
 
-                props.setdisplay(false)
+                setdisplay(false)
 
 
 
@@ -65,7 +67,7 @@ export default function Navbar(props) {
                     setloggedin(true)
                 }
 
-                props.setdisplay(false)
+                setdisplay(false)
 
 
 
@@ -77,7 +79,7 @@ export default function Navbar(props) {
     return (
 
         <>
-            <div className='navbar'>
+            {display ? <Loader /> : <>  <div className='navbar'>
                 <img className='logo' src={logo} alt="" />
 
                 <div className="space">
@@ -145,7 +147,8 @@ export default function Navbar(props) {
 
 
                 </div>
-            </div>
+            </div></>}
+
         </>
 
     )
