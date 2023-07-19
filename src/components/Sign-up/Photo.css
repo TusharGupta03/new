@@ -17,28 +17,31 @@
 }
 .before-upload 
 {
-    height: 17vw;
+    height: 12vw;
     width: 12vw;
     border: 2px solid grey;
     border-style: dashed ;
     border-radius: 10px;
     background-color: rgb(235, 232, 232);
     font-size: 1.4vw;
+    border-radius: 10%;
 }
 .image {
     
-    height: 17vw;
+    height: 12vw;
     width: 12vw;
     margin: auto;
+    object-fit: cover;
     border-radius:10px ;
     background-position: center center;
+    border-radius: 10%;
 }
 .cross2
 {
     position: absolute;
     top: 35%;
     width: auto;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-align: center;
     color: grey;
     z-index: 0;

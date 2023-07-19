@@ -7,28 +7,21 @@ import './Home.css'
 
 import { useState } from "react";
 export default function Home(props) {
-  document.getElementsByTagName('body')[0].style.overflow = "hidden";
+  const [display, setdisplay] = useState(true)
 
-  const [loader, set_loader] = useState(false);
-  setTimeout(function () {
-    set_loader(true);
-  }, 6000)
+  setTimeout(() => {
+    setdisplay(false)
 
-  const [loader2, set_loader2] = useState(true);
-  setTimeout(function () {
-    set_loader2(false);
-    document.getElementsByTagName('body')[0].style.overflow = "auto";
-  }, 7400)
-
+  }, 3600);
   return (
     <>
-      {loader ?
-        <div className='home'>
-          <Points /> <Navbar loggedin={props.loggedin} setloggedin={props.setloggedin} /><MainText />
-        </div>
-        : null}
+      {display ? <Loader /> : null}
+      <div className='home'>
+        <Points /> <Navbar loggedin={props.loggedin} setloggedin={props.setloggedin} /><MainText />
+      </div>
 
-      {loader2 ? <Loader /> : null}
+
+
     </>
   )
 }

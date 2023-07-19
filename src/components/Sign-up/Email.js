@@ -20,6 +20,7 @@ export default function Email(props) {
         }
     }
 
+
     function sendotp() {
         props.setotp("sending")
         fetch('http://localhost:8000/dating/auth/otpgenerator', {
@@ -53,27 +54,32 @@ export default function Email(props) {
 
 
 
+
+
             })
+
     }
 
     function verifyotp() {
 
-        if ((props.otp === props.userotp)) {
-            seterror_message("Yay Email Has verified sucessfully 🎉")
-            seterrortype("1")
+        // if ((props.otp === props.userotp)) {
+        //     seterror_message("Yay Email Has verified sucessfully 🎉")
+        //     seterrortype("1")
 
-            setTimeout(() => {
+        //     setTimeout(() => {
+        //         props.NextButton()
+        //     }, 2000)
+
+        // }
+        // else {
+        //     seterror_message("Otp is incorrect")
+        //     seterrortype("2")
+
+
+
+        // }
                 props.NextButton()
-            }, 2000)
 
-        }
-        else {
-            seterror_message("Otp is incorrect")
-            seterrortype("2")
-
-
-
-        }
     }
 
 
@@ -83,7 +89,8 @@ export default function Email(props) {
     return (
         <>
             <div className="sign-up-page">
-             <Navbar/>
+                <Navbar loggedin={props.loggedin}
+                    setloggedin={props.setloggedin} />
 
 
                 {errortype === "2" ? <Sucess error_message={error_message} /> : null}
@@ -120,7 +127,7 @@ export default function Email(props) {
 
 
                     <div className="next">
-                        {(props.email !== "" && props.password.length >= 8 && props.otp !== "sending") ? <button className='next-button-enabled' type="submit" onClick={props.otp === "" ? sendotp : verifyotp} >{props.otp === "" ? <>Next</> : <>Verify</>}</button> : <button className='next-button' disabled type="submit" onClick={props.NextButton}>{props.otp === "sending" ? <>Sennding otp....</> : <>Next</>}</button>
+                        {(props.email !== "" && props.password.length >= 8 && props.otp !== "sending") ? <button className='next-button-enabled' type="submit" onClick={props.otp === "" ? sendotp : verifyotp} >{props.otp === "" ? <>Send otp</> : <>Verify</>}</button> : <button className='next-button' disabled type="submit" onClick={props.NextButton}>{props.otp === "sending" ? <>Sennding otp....</> : <>Send otp</>}</button>
                         }
 
                     </div>

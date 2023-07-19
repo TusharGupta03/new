@@ -21,7 +21,7 @@
 .component {
   /* color: rgb(214, 53, 4);; */
   color: rgb(214, 53, 4);
-  ;
+
   font-size: 2vw;
   font-family: 'Lobster', cursive;
   font-family: 'Pacifico', cursive;
@@ -41,15 +41,18 @@
 
 }
 
+
+
 .login-button {
   margin: 0.5vw 0vw;
   font-size: 1.5vw;
   padding: 0px 1vw;
   border-radius: 5px;
-  background-color: #f6d1d3;
+  background-color: rgb(255, 255, 255, 0.13);
+  backdrop-filter: blur(15px);
   font-family: 'Pacifico', cursive;
   color: rgb(214, 53, 4);
-
+  cursor: pointer;
   border: 2px solid rgb(214, 53, 4);
 
 
@@ -61,6 +64,8 @@
   /* Lowering the shadow */
 }
 
+
+
 .sign-up {
   margin: 0px 1vw;
 }
@@ -70,11 +75,12 @@
   font-size: 1.5vw;
   padding: 0px 1vw;
   border-radius: 5px;
-  background-color: #f6d1d3;
+  background-color: rgb(255, 255, 255, 0.13);
+  backdrop-filter: blur(15px);
   font-family: 'Pacifico', cursive;
   color: rgb(214, 53, 4);
   border: 2px solid rgb(214, 53, 4);
-
+  cursor: pointer;
 }
 
 .sign-up-button:active {
@@ -82,6 +88,41 @@
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   /* Lowering the shadow */
 }
+
+.account {
+  padding: 1vh 0vw;
+  font-size: 1.5vw;
+}
+
+#profile {
+  margin-left: 80px;
+}
+
+.profile-part {
+  display: flex;
+}
+
+.profile-container {
+  margin: 1vw 1vw;
+
+  height: 2vw;
+  width: 2vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.profile-image {
+
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+
 
 
 a {
@@ -128,4 +169,87 @@ a {
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+
+
+
+.dropdown-container {
+  position: absolute;
+  display: none;
+  /* top:10%;*/
+  right: 5%;
+  /* left: 0; */
+  /* bottom: 0; */
+  top: 2.5vw;
+  z-index: 1;
+  background-color: rgb(255, 255, 255, 0.13);
+  backdrop-filter: blur(0px);
+  width: 12vw;
+  height: 0vh;
+  /* border: 2px solid red ; */
+  border-radius: 5%;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  animation: opening-dropdown;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+
+}
+
+.dropdown-item {
+  /* color: rgb(214, 53, 4);; */
+  color: rgb(214, 53, 4);
+
+  font-size: 2vw;
+  font-family: 'Lobster', cursive;
+  font-family: 'Pacifico', cursive;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-buttons {
+  /* margin: 0.5vw 0vw; */
+  font-size: 3vh;
+  /* padding: 0px 1vw; */
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0.13);
+  font-family: 'Pacifico', cursive;
+  color: rgb(214, 53, 4);
+  cursor: pointer;
+  /* border: 2px solid rgb(214, 53, 4); */
+  border: 0px;
+
+
+}
+
+.login-buttons:hover {
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+}
+
+.login-buttons:active {
+  transform: scale(0.98);
+  /* Lowering the shadow */
+}
+
+.profile-part:hover .dropdown-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes opening-dropdown {
+  0% {
+    height: 0vh;
+    backdrop-filter: blur(0px);
+
+  }
+
+  100% {
+    height: 22vh;
+    backdrop-filter: blur(15px);
+
+  }
 }

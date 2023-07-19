@@ -1,0 +1,97 @@
+.matched {
+    height: 100vh;
+    width: 100vw;
+    /* background-position: center; */
+    /* background-size: 100vw 100vh; */
+
+    /* resize: both; */
+    /* position: relative;  */
+    position: absolute;
+    z-index: 3;
+    /* overflow: hidden; */
+    background-color: rgb(0, 0, 0, 0.13);
+    backdrop-filter: blur(10px);
+}
+
+.matched-profile {
+    /* border: 2px solid red ; */
+    height: 60vh;
+    width: 100vw;
+    margin: 15vh 0;
+    position: relative;
+    text-align: center;
+}
+
+.user-image {
+    /* border: 2px solid red ; */
+    height: 35vh;
+    width: 15vw;
+    position: absolute;
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+    display: flex;
+    flex-direction: column;
+}
+
+.user {
+    height: 30vh;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.ims {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+}
+.mat-name 
+{
+    font-size: 1.5vw;
+}
+
+#user {
+    left: 25%;
+}
+
+#mat {
+    right: 25%;
+}
+
+.shpae-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.hear {
+    height: 24vh;
+    width: 12 vw;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+    font-size: 2vw;
+    margin: 0vh 40vw;
+    /* border: 2px solid red ; */
+}
+
+.next-profile {
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+    font-size: 1vw;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0px;
+
+}
+
+.next-profile:active {
+    transform: scale(0.98);
+}
+
+.next-profile:hover {
+    transform: scale(0.98);
+}

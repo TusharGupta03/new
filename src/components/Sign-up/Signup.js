@@ -7,10 +7,11 @@ import Email from "./Email";
 import Personal from "./Personal";
 import Intrest from "./Intrest";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Home-Page/Navbar/Navbar";
+import Loader from "../Loader/Loader";
+import { useEffect } from "react";
 
 
-export default function Signup() {
+export default function Signup(props) {
     document.getElementsByTagName("body")[0].style.overflow = "auto";
 
     const [page, setpage] = useState(1);
@@ -22,8 +23,10 @@ export default function Signup() {
     const [gender, setgender] = useState("");
     const [intrestarr, setIntrest] = useState([]);
     const [previewUrl, setPreviewUrl] = useState([]);
-    const [otp, setotp] = useState("")
+    const [otp, setotp] = useState("123456")
     const [userotp, setuserotp] = useState("")
+    const [display, setdisplay] = useState(true)
+
     const nav = useNavigate()
 
 
@@ -37,6 +40,7 @@ export default function Signup() {
             reader.onload = (e) => {
                 let new_arr = [...previewUrl];
                 new_arr[a] = e.target.result;
+                console.log(e.target.result)
                 setPreviewUrl(new_arr);
             };
             reader.readAsDataURL(file);
@@ -133,12 +137,23 @@ export default function Signup() {
             })
 
     }
+    useEffect(() => {
+        setdisplay(true)
+        if (otp !== "sending") {
+            setTimeout(() => {
+                setdisplay(false)
+
+            }, 1500);
+        }
+
+    }, [page, otp])
 
 
 
     if (page === 1) {
         return (
             <>
+                {display ? <Loader /> : null}
                 <Email
                     title={"Sign Up"}
                     userotp={userotp}
@@ -150,6 +165,9 @@ export default function Signup() {
                     password={password}
                     NextButton={NextButton}
                     Handel_onchange={Handel_onchange}
+                    loggedin={props.loggedin}
+                    setloggedin={props.setloggedin}
+                    setdisplay={setdisplay}
                 />
             </>
         );
@@ -157,6 +175,8 @@ export default function Signup() {
     if (page === 2) {
         return (
             <>
+                {display ? <Loader /> : null}
+
                 <Personal
                     logo={logo}
                     name={name}
@@ -164,16 +184,20 @@ export default function Signup() {
                     gender={gender}
                     Handel_onchange={Handel_onchange}
                     NextButton={NextButton}
+                    loggedin={props.loggedin}
+                    setloggedin={props.setloggedin}
                 />
             </>
         );
     }
 
     if (page === 3) {
+
         return (
             <>
+                {display ? <Loader /> : null}
+
                 <div className="sign-up-page">
-                    <Navbar loggedin="false" />
                     <Intrest
                         intrest_handel={intrest_handel}
                         NextButton={NextButton}
@@ -184,10 +208,12 @@ export default function Signup() {
         );
     }
     if (page === 4) {
+
         return (
             <>
+                {/* {display ? <Loader /> : null} */}
+
                 <div className="sign-up-page">
-                    <Navbar loggedin="false" />
 
                     <div className="sign-Up-Intrest">
                         <div className="heading">

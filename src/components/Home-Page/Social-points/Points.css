@@ -1,19 +1,66 @@
 .social {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 5%;
-    bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 4%;
+  bottom: 10%;
+  z-index: 1;
 
+}
+
+
+
+.social-points {
+  margin: 0.5vw 0vw;
+  position: relative;
+
+}
+
+.points {
+  width: 2vw;
+  height: 4vh;
+  cursor: pointer;
+}
+
+.url {
+  display: none;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  /* border-radius: 50px; */
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  position: absolute;
+  width: 11vw;
+  background-color: #7e2127;
+  height: 4vh;
+  animation: social;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  overflow: hidden;
+  color: wheat;
+  font-size: 1.1vw;
+  /* padding: 0vh 1vw; */
+
+}
+.url-value
+{
+  font-family: 'Pacifico', cursive;
+
+  margin: 0vh 1.5vw;
+}
+
+@keyframes social {
+  0% {
+    width: 0vw;
   }
-  
- 
-  
-  .social-points {
-    margin: 0.5vw 0vw;
+
+  100% {
+    width: 12vw;
   }
-  
-  .points {
-    width: 2vw;
-    height: 4vh;
-  }
+}
+.social-points:hover .url
+{
+  display: initial;
+}

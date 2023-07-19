@@ -1,32 +1,109 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './extra.css'
-
+import Confetti from 'react-confetti'
+import heart from '../../images/heart3.png'
 export default function Extra() {
-    const [url, seturl] = useState("")
-    fetch('http://localhost:8000/dating/auth/login/tushargupta18224575@gmail.com', {
 
-        method: 'GET',
-        body: JSON.stringify(),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-        withCredentials: true,
-        credentials: 'include'
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            seturl(data.photo[0])
+  return (
 
 
+    <>
+      <div className="matched">
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={1000}
+          recycle={false}
+        />
+
+        <div className="matched-profile">
+          <div className="user-image" id='user'>
+            <div className="user">
+
+            </div>
+            <div className="mat-name">
+
+            </div>
+          </div>
+          <div className="user-image" id='mat'>
+            <div className="user">
+
+            </div>
+            <div className="mat-name">
+
+            </div>
+          </div>
+          <div className="shpae-title">
+            <div>
 
 
-        }
-        )
-
-    return (
-        <div>
-            <img className='a' src={url}  alt="" />
+              <img src={heart} alt="" className='hear' />
+            </div>
+            <div className="title">
+              Congratulation's You Have a Matched Profile
+            </div>
+          </div>
         </div>
-    )
+
+
+
+      </div>
+
+    </>
+  )
 }
+
+
+// export default function Extra(props) {
+
+
+//   function a() {
+//     fetch('http://localhost:8000/dating/user/notification', {
+
+//       method: 'POST',
+//       headers: {
+//         'Content-type': 'application/json; charset=UTF-8',
+//       },
+//       withCredentials: true,
+//       credentials: 'include'
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         socket.emit("new_noti", 'i')
+
+
+
+
+//       })
+//   }
+//   return (
+
+//     <>
+//       <button onClick={a}>hgsdhghs</button>
+
+
+
+
+//     </>
+//   )
+// }
+
+
+
+
+/* useEffect(() => {
+    const onPageLoad = () => {
+        setdisplay(false);
+      };
+  
+      // Check if the page has already loaded
+      if (document.readyState === 'complete') {
+        onPageLoad();
+      } else {
+        window.addEventListener('load', onPageLoad);
+        // Remove the event listener when component unmounts
+        return () => window.removeEventListener('load', onPageLoad);
+      }
+    }, []);*/
+
+

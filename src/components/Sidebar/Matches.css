@@ -1,0 +1,254 @@
+.match-con {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 2vh 1vw;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    height: 96vh;
+    width: 80vw;
+    border-radius: 15px;
+    /* background-image: linear-gradient(to right, rgb(243, 129, 94, 1) 0%, rgba(243, 129, 94, 0.3) 50%, rgba(243, 129, 94, 0.2) 75%, rgba(243, 129, 94, 0) 100%); */
+
+
+}
+
+.match-heading {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+    font-size: 2vw;
+
+}
+
+.profile-cont {
+    margin: 5vh 10vw;
+    height: 75vh;
+    border-radius: 15px;
+    width: auto;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    display: flex;
+    position: relative;
+}
+
+.profile-images {
+    height: 100%;
+    width: 50%;
+    object-fit: fill;
+    position: relative;
+}
+
+.left-image {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    cursor: pointer;
+
+
+}
+
+.left-image:active {
+    transform: scale(0.98);
+}
+
+.right-image:active {
+    transform: scale(0.98);
+}
+
+.right-image {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+@keyframes photo-motion {
+    from {
+        width: 0%;
+        margin: 0% 50%;
+    }
+
+    to {
+        width: 100%;
+        margin: 0% 0%;
+    }
+}
+
+.im {
+    height: 100%;
+    width: 0%;
+    border-radius: 15px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    animation-name: photo-motion;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes details-motion {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+.profile-details {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* background-image: linear-gradient(to right, rgb(241, 167, 145) 0%, rgba(243, 129, 94, 0.3) 50%, rgba(243, 129, 94, 0.2) 75%, rgba(243, 129, 94, 0) 100%); */
+    background-color: rgb(198, 60, 17);
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    animation-name: details-motion;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.profile-name {
+    /* margin-top: 18vh;
+    margin-left: 3vw; */
+    margin: 9vh 3vw;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 3vw;
+    display: flex;
+}
+
+.verify {
+    height: 8vh;
+    margin: 2vh 1.5vw;
+}
+
+.profile-age {
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+    font-size: 2vw;
+}
+
+.deta {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.intrests {
+    width: 70%;
+    height: auto;
+    margin: 0vh 3vw;
+    margin-right: 2vw;
+    /* display: flex; */
+
+}
+
+.intrest-area {
+
+    margin: 0.8vh 0.8vw;
+    font-size: 1.2vw;
+    /* padding: 0.5vh 0.5vw; */
+    /* background-color: #ffc9cd; */
+    font-family: 'Pacifico', cursive;
+    color: white;
+    float: left;
+}
+
+.progress {
+    width: 5vw;
+    margin: 0vh 0.8vw;
+
+}
+
+.accept-reject {
+    padding: 0vh 8vw;
+    margin: 8vh 0vw;
+    display: flex;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 1vw;
+}
+
+.accept {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.reject {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.accept:hover {}
+
+.accept:active {
+    transform: scale(0.98);
+    /* Lowering the shadow */
+}
+
+.reject:hover {}
+
+.reject:active {
+    transform: scale(0.98);
+    /* Lowering the shadow */
+}
+
+
+.sp {
+    width: 8vw;
+}
+
+.no-profile {
+    width: 100%;
+    font-size: 3vw;
+    text-align: center;
+    margin: auto;
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+}
+
+.ac-rec-loader {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgb(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.joint {
+    margin: 20vh;
+    animation-name: heart-accept-broke;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes heart-accept-broke {
+    0% {
+        transform: scale(0.25);
+    }
+
+    25% {
+        transform: scale(0.50);
+
+    }
+
+    75% {
+        transform: scale(0.75);
+
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

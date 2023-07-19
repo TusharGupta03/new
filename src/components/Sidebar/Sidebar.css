@@ -1,0 +1,75 @@
+.panel-container {
+
+    border: 2px solid red;
+
+
+}
+
+.panel {
+    position: sticky;
+    height: 96vh;
+    width: 16.5vw;
+    top: 2%;
+    bottom: 2%;
+    /* left: 1%; */
+    margin-left: 1vw;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+
+    /* background-color: rgb(255, 255, 255, 0.13);
+    backdrop-filter: blur(15px); */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+}
+
+.panel-logo {
+    margin: 2vh 2.6vw;
+    width: auto;
+    height: auto;
+}
+
+.logo4 {
+    width: 10vw;
+}
+
+.space9 {
+    height: 5vh;
+    width: auto;
+}
+
+.panel-item {
+    font-family: 'Pacifico', cursive;
+    color: rgb(214, 53, 4);
+
+
+    padding: 1vh 4vw;
+    font-size: 1.3vw;
+    margin: 1vh 0vw;
+    display: flex;
+    position: relative;
+
+}
+
+.panel-image {
+    position: absolute;
+    left: 5%;
+    top: 28%;
+}
+.panel-image-css
+{
+   height: auto;
+   width: 1.5vw;
+
+}
+
+#onclicked {
+    background-image: linear-gradient(to right, rgb(255, 190, 170, 1) 0%, rgba(255, 190, 170, 0.3) 50%, rgba(255, 190, 170, 0.2) 75%, rgba(255, 190, 170, 0) 100%);
+    border-left: 5px solid rgb(214, 53, 4);
+}
+.e
+{
+    height: 200vh;
+    width: 20vw;
+}

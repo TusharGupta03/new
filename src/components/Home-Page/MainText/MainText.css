@@ -11,17 +11,17 @@
 }
 
 .line {
-  margin: 11vh 13vw;
+  margin: 11vh 17vw;
   margin-bottom: 0vh;
   /* font-family: 'Lobster', cursive; */
   font-family: 'Pacifico', cursive;
   color: rgb(214, 53, 4);
-  font-size: 7vh;
+  font-size: 7vmin;
   padding: 0vh 2vw;
 }
 
 .application {
-  margin: 1vh 13vw;
+  margin: 1vh 17vw;
   /* font-family: 'Lobster', cursive; */
   font-family: 'Pacifico', cursive;
   color: rgb(214, 53, 4);
@@ -31,7 +31,7 @@
 }
 
 .find {
-  margin: 2vh 9vw;
+  margin: 2vh 12vw;
   display: flex;
   animation-name: find-love;
   animation-duration: 3s;
@@ -77,6 +77,10 @@
 .heart2-img {
   width: 4vw;
   height: 9vh;
+  animation-name: heart-img-motion;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 
@@ -136,25 +140,18 @@
 
 
 
-.heart-img {
-  margin: 18vh 6vw;
-  margin-right: 0vw;
 
-  width: 108px;
-  height: 108px;
-  animation: heart-img-motion 1s ease infinite;
-}
 
 @keyframes heart-img-motion {
   0% {
-    transform: scale(1, 1);
+    transform: scale(0.8, 0.8);
   }
 
   50% {
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
   }
 
   100% {
-    transform: scale(1, 1);
+    transform: scale(0.8, 0.8);
   }
 }

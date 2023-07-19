@@ -4,6 +4,7 @@ import eye from '../../images/eye.png'
 import { useNavigate } from 'react-router-dom';
 import Error from '../Error-page/Error';
 import Navbar from '../Home-Page/Navbar/Navbar';
+import Loader from '../Loader/Loader';
 
 
 
@@ -12,6 +13,7 @@ export default function Login(props) {
     const [password, setpassowrd] = useState("");
     const [type, settype] = useState("password")
     const [status, setstatus] = useState("")
+    const [display, setdisplay] = useState(true)
     const nav = useNavigate()
 
     function Handel_onchange(e) {
@@ -53,7 +55,6 @@ export default function Login(props) {
                 console.log(data)
                 if (data.status === 200) {
                     props.setloggedin(true)
-                    localStorage.setItem("user", "true")
                     nav("/")
                 }
                 else {
@@ -69,10 +70,19 @@ export default function Login(props) {
 
     }
 
+    setTimeout(() => {
+        setdisplay(false)
+
+    }, 1500);
+
     return (
+
         <>
+
+
+            {display ? <Loader /> : null}
             <div className="sign-up-page">
-                <Navbar />
+                <Navbar loggedin={props.loggedin} setloggedin={props.setloggedin} />
 
                 {status === "404" ? <Error error_message="Invalid Credentials" /> : null}
 
