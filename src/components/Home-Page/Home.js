@@ -4,7 +4,6 @@ import Navbar from './Navbar/Navbar';
 import Points from './Social-points/Points';
 import './Home.css'
 
-import { useState } from "react";
 export default function Home(props) {
 
   // setTimeout(() => {
