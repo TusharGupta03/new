@@ -23,7 +23,7 @@ export default function Email(props) {
 
     function sendotp() {
         props.setotp("sending")
-        fetch('https://projectbackend-ycya.onrender.com/dating/auth/otpgenerator', {
+        fetch('https://backend-50ji.onrender.com/dating/auth/otpgenerator', {
 
             method: 'POST',
             body: JSON.stringify({

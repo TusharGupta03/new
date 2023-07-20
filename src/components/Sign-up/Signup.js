@@ -114,7 +114,7 @@ export default function Signup(props) {
             photo: previewUrl
 
         }
-        fetch('https://projectbackend-ycya.onrender.com/dating/user/new_user', {
+        fetch('https://backend-50ji.onrender.com/dating/user/new_user', {
 
             method: 'POST',
             body: JSON.stringify(Details),

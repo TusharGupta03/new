@@ -41,7 +41,7 @@ export default function Login(props) {
         }
 
 
-        fetch('https://projectbackend-ycya.onrender.com/dating/auth/login', {
+        fetch('https://backend-50ji.onrender.com/dating/auth/login', {
 
             method: 'POST',
             body: JSON.stringify(details),

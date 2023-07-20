@@ -20,7 +20,7 @@ export default function Navbar(props) {
     useEffect(() => {
 
         setdisplay(true)
-        fetch('https://projectbackend-ycya.onrender.com/dating/auth/token', {
+        fetch('https://backend-50ji.onrender.com/dating/auth/token', {
 
             method: 'GET',
             headers: {
@@ -51,7 +51,7 @@ export default function Navbar(props) {
 
     function logout() {
         setdisplay(true)
-        fetch('https://projectbackend-ycya.onrender.com/dating/auth/logout', {
+        fetch('https://backend-50ji.onrender.com/dating/auth/logout', {
 
             method: 'GET',
             headers: {
