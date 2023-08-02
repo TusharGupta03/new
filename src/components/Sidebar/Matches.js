@@ -14,7 +14,7 @@ import Loader from '../Loader/Loader'
 import heart_joint from '../../images/heart-joint.png'
 import heart_break from '../../images/heart-broke.png'
 import Matched from '../Matched/MAtched'
-import sockets from '../socket'
+import {sockets} from '../socket'
 export default function Matches() {
   const broken = false
   const [matches, setmatches] = useState([])
@@ -131,7 +131,7 @@ export default function Matches() {
             setreject(false)
             const fun = async () => {
 
-              socket.current = await sockets();
+              socket.current = await sockets("normal");
               socket.current.emit("new_noti", matches[i]._id)
 
 

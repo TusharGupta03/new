@@ -7,7 +7,7 @@ import profile from '../../images/profile.png'
 import premium from '../../images/premium.png'
 import logouts from '../../images/logout.png'
 import './Sidebar.css'
-import sockets from '../socket'
+import {sockets,setnull} from '../socket'
 import Loader from '../Loader/Loader'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -19,7 +19,7 @@ export default function Sidebar(props) {
     const socket = useRef(null)
     useEffect(() => {
         const a = async () => {
-            socket.current = await sockets();
+            socket.current = await sockets("logout");
         }
         a()
     })
@@ -40,6 +40,7 @@ export default function Sidebar(props) {
                 if (data.status === 200) {
 
                     socket.current.emit("logout")
+                    setnull()
 
                     nav("/login")
                 }

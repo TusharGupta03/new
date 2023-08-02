@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 import './Dashboard.css'
 import forward from '../../images/right-arrow.png'
 import backward from '../../images/backward.png'
-import sockets from '../socket'
+import {sockets} from '../socket'
 import { useNavigate } from 'react-router-dom';
 import Loader from '../Loader/Loader'
 

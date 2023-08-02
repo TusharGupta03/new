@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "./Sidebar";
 import "./Chat.css";
 import test from "../../images/Priya.jpg";
-import sockets from "../socket";
+import {sockets} from "../socket";
 import onlines from "../../images/online.png";
 import Loader from "../Loader/Loader";
 import { useNavigate } from "react-router-dom";
