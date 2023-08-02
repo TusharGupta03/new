@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Error from '../Error-page/Error';
 import Navbar from '../Home-Page/Navbar/Navbar';
 import Loader from '../Loader/Loader';
+import socket from '../socket';
+
 
 
 
@@ -41,7 +43,7 @@ export default function Login(props) {
         }
 
 
-        fetch('https://backend-50ji.onrender.com/dating/auth/login', {
+        fetch(`https://backend-50ji.onrender.com/dating/auth/login`, {
 
             method: 'POST',
             body: JSON.stringify(details),

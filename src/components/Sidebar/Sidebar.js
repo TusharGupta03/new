@@ -44,7 +44,7 @@ export default function Sidebar(props) {
                         <img src={profile} alt="" className='panel-image-css' />
                     </div>
                         <div className="panel-name">
-                            Profile
+                           Your Account
                         </div></div> </Link >
                     <Link to='/premium'>    <div className="panel-item" id={window.location.pathname === '/premium' ? 'onclicked' : ''}><div className="panel-image">
                         <img src={premium} alt="" className='panel-image-css' />

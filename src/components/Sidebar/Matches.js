@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Sidebar from './Sidebar'
 import './Matches.css'
 import verify from '../../images/verify.png'
@@ -14,7 +14,7 @@ import Loader from '../Loader/Loader'
 import heart_joint from '../../images/heart-joint.png'
 import heart_break from '../../images/heart-broke.png'
 import Matched from '../Matched/MAtched'
-
+import sockets from '../socket'
 export default function Matches() {
   const broken = false
   const [matches, setmatches] = useState([])
@@ -28,11 +28,13 @@ export default function Matches() {
   const [accepts, setaccept] = useState(false)
   const [rejects, setreject] = useState(false)
   const [user_infor, setuser_infor] = useState({})
+  const socket = useRef(null)
+
 
 
   useEffect(() => {
     console.log("a")
-    fetch('https://backend-50ji.onrender.com/dating/matches/matched', {
+    fetch(`https://backend-50ji.onrender.com/dating/matches/matched`, {
 
       method: 'GET',
       headers: {
@@ -84,7 +86,7 @@ export default function Matches() {
   function send_seen() {
 
     const id = { id: matches[i]._id }
-    fetch('https://backend-50ji.onrender.com/dating/matches/seened', {
+    fetch(`https://backend-50ji.onrender.com/dating/matches/seened`, {
 
       method: 'POST',
       body: JSON.stringify(id),
@@ -107,7 +109,7 @@ export default function Matches() {
 
   function send_like() {
     const id = { id: matches[i]._id }
-    fetch('https://backend-50ji.onrender.com/dating/matches/liked', {
+    fetch(`https://backend-50ji.onrender.com/dating/matches/liked`, {
 
       method: 'POST',
       body: JSON.stringify(id),
@@ -127,6 +129,15 @@ export default function Matches() {
             setshowmatched(true)
             setaccept(false)
             setreject(false)
+            const fun = async () => {
+
+              socket.current = await sockets();
+              socket.current.emit("new_noti", matches[i]._id)
+
+
+            }
+            fun()
+
           }
           else {
             console.log("notmatched")
@@ -138,7 +149,7 @@ export default function Matches() {
 
       })
   }
-  function accept() {
+  async function accept() {
 
     setaccept(true)
     send_seen()
@@ -199,8 +210,8 @@ export default function Matches() {
       {display ? <Loader /> : null}
       {showmatched ? <Matched
         setshowmatched={setshowmatched}
-        matcher={matches[i].name}
-        matcher_image={matches[i].photo[0]}
+        matcher={matches[i - 1].name}
+        matcher_image={matches[i - 1].photo[0]}
         user={user_infor}
 
       /> : null}

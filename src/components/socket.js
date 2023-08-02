@@ -1,4 +1,21 @@
 import { io } from 'socket.io-client';
-const socket = io("https://backend-50ji.onrender.com")
+let connection = null
+const socket = async () => {
+    if (!connection) {
 
-export default socket
+        connection = io("https://backend-50ji.onrender.com", {
+            withCredentials: true,
+            transports: ['websocket', 'polling']
+        })
+        
+        connection.emit("make_user_online")
+
+    }
+
+    return connection
+
+
+}
+
+
+export default socket 

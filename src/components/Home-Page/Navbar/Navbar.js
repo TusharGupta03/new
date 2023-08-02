@@ -3,10 +3,9 @@ import logo from '../../../images/flirtify-logos.png'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../Loader/Loader';
-
-
 import './Navbar.css'
 import { useState } from 'react';
+
 
 export default function Navbar(props) {
 
@@ -20,7 +19,7 @@ export default function Navbar(props) {
     useEffect(() => {
 
         setdisplay(true)
-        fetch('https://backend-50ji.onrender.com/dating/auth/token', {
+        fetch(`https://backend-50ji.onrender.com/dating/auth/token`, {
 
             method: 'GET',
             headers: {
@@ -51,7 +50,7 @@ export default function Navbar(props) {
 
     function logout() {
         setdisplay(true)
-        fetch('https://backend-50ji.onrender.com/dating/auth/logout', {
+        fetch(`https://backend-50ji.onrender.com/dating/auth/logout`, {
 
             method: 'GET',
             headers: {

@@ -6,6 +6,7 @@ import Sucess from '../Error-page/Sucess';
 import Navbar from '../Home-Page/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Email(props) {
     const [type, settype] = useState("password")
     const [error_message, seterror_message] = useState("")
@@ -23,7 +24,8 @@ export default function Email(props) {
 
     function sendotp() {
         props.setotp("sending")
-        fetch('https://backend-50ji.onrender.com/dating/auth/otpgenerator', {
+        console.log("sendoibg")
+        fetch(`https://backend-50ji.onrender.com/dating/auth/otpgenerator`, {
 
             method: 'POST',
             body: JSON.stringify({
@@ -37,6 +39,7 @@ export default function Email(props) {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data.status)
                 if (data.status === 200) {
                     props.setotp(data.otpis)
                     console.log("data" + data.otpis)
@@ -61,24 +64,25 @@ export default function Email(props) {
     }
 
     function verifyotp() {
+        console.log(props.otp)
+        console.log(props.userotp)
+        if ((props.otp === props.userotp)) {
+            seterror_message("Yay Email Has verified sucessfully 🎉")
+            seterrortype("1")
 
-        // if ((props.otp === props.userotp)) {
-        //     seterror_message("Yay Email Has verified sucessfully 🎉")
-        //     seterrortype("1")
-
-        //     setTimeout(() => {
-        //         props.NextButton()
-        //     }, 2000)
-
-        // }
-        // else {
-        //     seterror_message("Otp is incorrect")
-        //     seterrortype("2")
-
-
-
-        // }
+            setTimeout(() => {
                 props.NextButton()
+            }, 2000)
+
+            props.NextButton()
+        }
+        else {
+            seterror_message("Otp is incorrect")
+            seterrortype("2")
+
+
+
+        }
 
     }
 

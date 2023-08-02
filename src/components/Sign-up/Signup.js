@@ -11,6 +11,7 @@ import Loader from "../Loader/Loader";
 import { useEffect } from "react";
 
 
+
 export default function Signup(props) {
     document.getElementsByTagName("body")[0].style.overflow = "auto";
 
@@ -23,7 +24,7 @@ export default function Signup(props) {
     const [gender, setgender] = useState("");
     const [intrestarr, setIntrest] = useState([]);
     const [previewUrl, setPreviewUrl] = useState([]);
-    const [otp, setotp] = useState("jhdghg")
+    const [otp, setotp] = useState("")
     const [userotp, setuserotp] = useState("")
     const [display, setdisplay] = useState(true)
 
@@ -37,13 +38,13 @@ export default function Signup(props) {
             const file = e.target.files[0];
 
             const reader = new FileReader();
+            reader.readAsDataURL(file);
             reader.onload = (e) => {
                 let new_arr = [...previewUrl];
                 new_arr[a] = e.target.result;
                 console.log(e.target.result)
                 setPreviewUrl(new_arr);
             };
-            reader.readAsDataURL(file);
 
         } else if (e.target.type === "email") {
             setemail(e.target.value);
@@ -114,7 +115,7 @@ export default function Signup(props) {
             photo: previewUrl
 
         }
-        fetch('https://backend-50ji.onrender.com/dating/user/new_user', {
+        fetch(`https://backend-50ji.onrender.com/dating/user/new_user`, {
 
             method: 'POST',
             body: JSON.stringify(Details),
@@ -139,7 +140,7 @@ export default function Signup(props) {
             })
 
     }
-    useEffect(() => {
+    useEffect(() => {   
         setdisplay(true)
         if (otp !== "sending") {
             setTimeout(() => {

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Sidebar from './Sidebar'
 import './Dashboard.css'
 import forward from '../../images/right-arrow.png'
 import backward from '../../images/backward.png'
-import socket from '../socket'
+import sockets from '../socket'
 import { useNavigate } from 'react-router-dom';
 import Loader from '../Loader/Loader'
+
 
 
 export default function Dashboard() {
@@ -15,6 +16,8 @@ export default function Dashboard() {
     const [photos, setphotos] = useState([])
     const [notifications, setnotifications] = useState([])
     const [nothing, setnothing] = useState(false)
+    const [chat_refresher, setchatrefresher] = useState(0)
+    const socket = useRef(null)
 
     console.log("h")
     function se() {
@@ -27,7 +30,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         console.log("effect start here ")
-        fetch('https://backend-50ji.onrender.com/dating/matches/liked', {
+        fetch(`https://backend-50ji.onrender.com/dating/matches/liked`, {
 
             method: 'GET',
             headers: {
@@ -64,7 +67,7 @@ export default function Dashboard() {
 
         function search() {
 
-            fetch('https://backend-50ji.onrender.com/dating/user/notification', {
+            fetch(`https://backend-50ji.onrender.com/dating/user/notification`, {
 
                 method: 'GET',
                 headers: {
@@ -90,10 +93,18 @@ export default function Dashboard() {
         }
 
         search()
-        socket.on("new_notification", (data) => {
-            console.log("fetch new notification")
-            search()
-        })
+
+        const fun = async () => {
+
+            socket.current = await sockets();
+
+            socket.current.on("new_notification", (data) => {
+                console.log("fetch new notification")
+                search()
+            })
+        }
+        fun()
+
         // socket.emit("new_noti", "hghdagdh")
 
     }
