@@ -16,7 +16,6 @@ export default function Dashboard() {
     const [photos, setphotos] = useState([])
     const [notifications, setnotifications] = useState([])
     const [nothing, setnothing] = useState(false)
-    const [chat_refresher, setchatrefresher] = useState(0)
     const socket = useRef(null)
 
     console.log("h")

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import Error from '../Error-page/Error';
 import Navbar from '../Home-Page/Navbar/Navbar';
 import Loader from '../Loader/Loader';
-import socket from '../socket';
 
 
 

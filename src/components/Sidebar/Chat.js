@@ -5,7 +5,7 @@ import test from "../../images/Priya.jpg";
 import sockets from "../socket";
 import onlines from "../../images/online.png";
 import Loader from "../Loader/Loader";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Chat() {
   const [chat_profiles, setchat_profiles] = useState([]);
@@ -149,6 +149,7 @@ export default function Chat() {
           console.log(data)
           let new_arr = []
 
+          // eslint-disable-next-line
           newarr.map((message) => {
 
 
@@ -193,7 +194,9 @@ export default function Chat() {
             }
 
 
-          })
+          }
+
+          )
           setmessages(new_arr)
         } else {
         }
