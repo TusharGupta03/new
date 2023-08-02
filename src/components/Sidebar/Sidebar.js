@@ -13,7 +13,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 export default function Sidebar(props) {
-    const [display, setdisplay] = useState(true)
+    const [display, setdisplay] = useState(false)
     const nav = useNavigate()
 
     const socket = useRef(null)
