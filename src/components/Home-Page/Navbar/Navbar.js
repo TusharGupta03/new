@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import logo from '../../../images/flirtify-logos.png'
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
 import Loader from '../../Loader/Loader';
 import './Navbar.css'
 import { useState } from 'react';
@@ -9,7 +8,6 @@ import { useState } from 'react';
 
 export default function Navbar(props) {
 
-    const nav = useNavigate()
     const [account, setaccount] = useState()
     const [photo, setphoto] = useState()
     const { setloggedin } = props
@@ -48,35 +46,7 @@ export default function Navbar(props) {
         // eslint-disable-next-line
     }, [])
 
-    function logout() {
-        setdisplay(true)
-        fetch(`https://backend-50ji.onrender.com/dating/auth/logout`, {
-
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-            withCredentials: true,
-            credentials: 'include'
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.status === 200) {
-                    setloggedin(false)
-
-                    nav("/login")
-                }
-                else {
-                    setloggedin(true)
-                }
-
-                setdisplay(false)
-
-
-
-            })
-
-    }
+   
 
 
     return (
@@ -119,10 +89,7 @@ export default function Navbar(props) {
                                             Help
                                         </button>
                                         </div>
-                                        <div className="dropdown-item "> <button className="login-buttons" onClick={logout}>
-                                            Logout
-                                        </button>
-                                        </div>
+                                        
 
                                     </div>
                                 </div>
