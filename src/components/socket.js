@@ -22,7 +22,9 @@ export const sockets = async () => {
 
 export const setnull = async () => {
 
-    connection = null
+console.log(`before ${connection}`)
+connection = null
+console.log(`after ${connection}`)
 
 }
 
