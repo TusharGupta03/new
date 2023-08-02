@@ -39,7 +39,7 @@ export default function Sidebar(props) {
             .then((data) => {
                 if (data.status === 200) {
 
-                    socket.current.emit("disconnect")
+                    socket.current.disconnect()
 
                     nav("/login")
                 }
