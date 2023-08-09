@@ -8,36 +8,37 @@
 .container {
     margin-top: 0px;
 }
-.cross
-{
+
+.cross {
     position: absolute;
     top: 0;
     right: 0;
     width: 2vw;
 }
-.before-upload 
-{
+
+.before-upload {
     height: 12vw;
     width: 12vw;
     border: 2px solid grey;
-    border-style: dashed ;
+    border-style: dashed;
     border-radius: 10px;
     background-color: rgb(235, 232, 232);
     font-size: 1.4vw;
     border-radius: 10%;
 }
-.image {
-    
+
+.imagee {
+
     height: 12vw;
     width: 12vw;
     margin: auto;
     object-fit: cover;
-    border-radius:10px ;
+    border-radius: 10px;
     background-position: center center;
     border-radius: 10%;
 }
-.cross2
-{
+
+.cross2 {
     position: absolute;
     top: 35%;
     width: auto;
@@ -46,15 +47,48 @@
     color: grey;
     z-index: 0;
 }
-.upload 
-{
+
+.upload {
     margin: auto auto;
 }
-.input-file
-{
-   display: none;
+
+.input-file {
+    display: none;
 }
-span 
-{
+
+span {
     margin-top: 50px;
+}
+
+@media(max-width:480px) {
+
+    .before-upload {
+
+        height: 18vw;
+        width: 18vw;
+        border: 1px solid grey;
+        border-style: dashed;
+
+    }
+
+    .cross2 {
+        position: absolute;
+        top: 35%;
+        width: auto;
+        font-size: 2vw;
+        text-align: center;
+        color: grey;
+        z-index: 0;
+    }
+
+    .imagee {
+
+        height: 15vw;
+        width: 15vw;
+        margin: auto;
+        object-fit: cover;
+        border-radius: 10px;
+        background-position: center center;
+        border-radius: 10%;
+    }
 }

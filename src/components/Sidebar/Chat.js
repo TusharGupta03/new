@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "./Sidebar";
 import "./Chat.css";
 import test from "../../images/Priya.jpg";
-import {sockets} from "../socket";
+import { sockets } from "../socket";
 import onlines from "../../images/online.png";
 import Loader from "../Loader/Loader";
 import { useNavigate } from "react-router-dom";
@@ -100,6 +100,20 @@ export default function Chat() {
         if (data.from === currentIdRef.current) {
           setmessages((m) => [...m, new_messa])
 
+        }
+        else {
+
+          let c = document.getElementById(data.from).innerHTML
+          console.log(c)
+          if (c === "") {
+
+            c = 1
+          }
+          else {
+            c++
+          }
+
+          document.getElementById(data.from).innerHTML = c
         }
 
 
@@ -211,7 +225,7 @@ export default function Chat() {
   const handelonclick = (e) => {
     console.log(e.target.id);
 
-
+    document.getElementById(chat_profiles[e.target.id]._id).innerHTML = ""
 
 
     setid(chat_profiles[e.target.id]._id);
@@ -335,6 +349,11 @@ export default function Chat() {
                             onClick={handelonclick}
                           >
                             {data.name}
+                          </div>
+                          <div className="notify" >
+                            <div className="number" id={data._id}>
+
+                            </div>
                           </div>
                         </div>
                       </div>

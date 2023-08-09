@@ -10,7 +10,7 @@ export default function Photo(props) {
           <div>
             {" "}
             <img
-              className="image"
+              className="imagee"
               src={
                 props.previewUrl[props.index]
                   ? props.previewUrl[props.index]

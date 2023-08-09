@@ -10,6 +10,7 @@
     flex-direction: column;
     position: relative;
     margin: 2vh 1vw;
+    flex-grow: 1;
 }
 
 .headi {

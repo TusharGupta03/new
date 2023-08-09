@@ -10,7 +10,20 @@ export default function Home(props) {
   return (
     <>
       <div className='home'>
-        <Points /> <Navbar loggedin={props.loggedin} setloggedin={props.setloggedin} /><MainText />
+
+
+        <Points /> <Navbar loggedin={props.loggedin} setloggedin={props.setloggedin} />
+
+
+        <div className="tex">
+          <div className="af">
+            <MainText />
+
+          </div>
+
+        </div>
+
+
       </div>
 
 

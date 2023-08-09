@@ -220,7 +220,7 @@ export default function Signup(props) {
 
                     <div className="sign-Up-Intrest">
                         <div className="heading">
-                            Upload Photos <h6>(Try to upload vertical and solo photo)</h6>
+                            Upload Photos <h6>(Try to upload portrait and solo photo)</h6>
                         </div>
                         <div className="photos-box">
                             <div className="photos">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Loader from '../../Loader/Loader';
 import './Navbar.css'
 import { useState } from 'react';
+import sidebar from '../../../images/sidebar.png'
 
 
 export default function Navbar(props) {
@@ -12,7 +13,7 @@ export default function Navbar(props) {
     const [photo, setphoto] = useState()
     const { setloggedin } = props
     const [display, setdisplay] = useState(true)
-
+    const [ids, setids] = useState("")
 
     useEffect(() => {
 
@@ -41,12 +42,23 @@ export default function Navbar(props) {
 
 
 
-
             })
         // eslint-disable-next-line
     }, [])
+    function idchange() {
+        if (ids === "") {
 
-   
+            setids("navbar-components-click")
+        }
+        else if (ids === "navbar-components-click") {
+            setids("navbar-components-rev-click")
+        }
+        else if (ids === "navbar-components-rev-click") {
+            setids("navbar-components-click")
+        }
+
+    }
+
 
 
     return (
@@ -59,7 +71,52 @@ export default function Navbar(props) {
 
                 </div>
 
-                <div className="navbar-components">
+
+                <div className="side-button" >
+                    <img src={sidebar} alt="" className='side-image' onClick={idchange} />
+                    {props.loggedin ? <>
+                        <div className="component " id='profile-extr'>
+                            <div className="profile-part">
+                                <div className="account">Hi,{account}</div>
+                                <div className="profile-container">
+
+                                    <img src={photo} alt="" className="profile-image" />
+                                    <div className="dropdown-container">
+                                        <Link to='/dashboard'>     <div className="dropdown-item "> <button className="login-buttons"  >
+
+                                            Dashboard
+                                        </button>
+                                        </div>
+                                        </Link>
+                                        <div className="dropdown-item "> <button className="login-buttons"  >
+                                            Dark Mode
+                                        </button>
+                                        </div>
+                                        <div className="dropdown-item "> <button className="login-buttons"  >
+                                            Help
+                                        </button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        {/* <div className="component logout"> <button className="login-button" onClick={logout} >
+                            Logout
+                        </button>
+                        </div> */}
+
+
+                    </>
+                        : null}
+                </div>
+
+
+                <div className="navbar-components" id={ids}>
                     <div className="component" id='home'> <Link to='/'>Home</Link><div className="underline"></div></div>
                     <div className="component" id='contact'><a href='/'>Contact</a><div className="underline"></div></div>
                     <div className="component" id='about'><a href='/'>About</a><div className="underline"></div></div>
@@ -89,7 +146,7 @@ export default function Navbar(props) {
                                             Help
                                         </button>
                                         </div>
-                                        
+
 
                                     </div>
                                 </div>

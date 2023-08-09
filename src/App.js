@@ -30,7 +30,6 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/premium' element={<Premium />} />
           <Route path='/extra' element={<Extra loggedin={loggedin} setloggedin={setloggedin} />} />
-
         </Routes>
 
       </Router>
