@@ -26,7 +26,7 @@ export default function Sidebar(props) {
 
     const logout = async () => {
         setdisplay(true)
-        fetch(`https://backend-50ji.onrender.com/dating/auth/logout`, {
+        fetch(`${process.env.REACT_APP_API_URL}/dating/auth/logout`, {
 
             method: 'GET',
             headers: {

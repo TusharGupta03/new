@@ -5,7 +5,7 @@ let connection = null
 export const sockets = async () => {
     if (!connection) {
 
-        connection = io("https://backend-50ji.onrender.com", {
+        connection = io(`${process.env.REACT_APP_API_URL}`, {
             withCredentials: true,
             transports: ['websocket', 'polling']
         })

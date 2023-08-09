@@ -115,7 +115,7 @@ export default function Signup(props) {
             photo: previewUrl
 
         }
-        fetch(`https://backend-50ji.onrender.com/dating/user/new_user`, {
+        fetch(`${process.env.REACT_APP_API_URL}/dating/user/new_user`, {
 
             method: 'POST',
             body: JSON.stringify(Details),

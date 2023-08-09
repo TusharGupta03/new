@@ -18,7 +18,7 @@ export default function Navbar(props) {
     useEffect(() => {
 
         setdisplay(true)
-        fetch(`https://backend-50ji.onrender.com/dating/auth/token`, {
+        fetch(`${process.env.REACT_APP_API_URL}/dating/auth/token`, {
 
             method: 'GET',
             headers: {

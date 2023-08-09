@@ -29,7 +29,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         console.log("effect start here ")
-        fetch(`https://backend-50ji.onrender.com/dating/matches/liked`, {
+        fetch(`${process.env.REACT_APP_API_URL}/dating/matches/liked`, {
 
             method: 'GET',
             headers: {
@@ -66,7 +66,7 @@ export default function Dashboard() {
 
         function search() {
 
-            fetch(`https://backend-50ji.onrender.com/dating/user/notification`, {
+            fetch(`${process.env.REACT_APP_API_URL}/dating/user/notification`, {
 
                 method: 'GET',
                 headers: {

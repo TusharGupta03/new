@@ -26,7 +26,7 @@ export default function Chat() {
 
   useEffect(() => {
     const matched_profile_chat = async () => {
-      fetch(`https://backend-50ji.onrender.com/dating/matches/matchedchat`, {
+      fetch(`${process.env.REACT_APP_API_URL}/dating/matches/matchedchat`, {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -146,7 +146,7 @@ export default function Chat() {
   const messages_loader = async (data) => {
 
     const id = { id: data }
-    await fetch(`https://backend-50ji.onrender.com/dating/chat/mess`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/dating/chat/mess`, {
       method: "POST",
       body: JSON.stringify(id),
       headers: {

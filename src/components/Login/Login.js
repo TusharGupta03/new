@@ -42,7 +42,7 @@ export default function Login(props) {
         }
 
 
-        fetch(`https://backend-50ji.onrender.com/dating/auth/login`, {
+        fetch(`${process.env.REACT_APP_API_URL}/dating/auth/login`, {
 
             method: 'POST',
             body: JSON.stringify(details),

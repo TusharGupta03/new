@@ -34,7 +34,7 @@ export default function Matches() {
 
   useEffect(() => {
     console.log("a")
-    fetch(`https://backend-50ji.onrender.com/dating/matches/matched`, {
+    fetch(`${process.env.REACT_APP_API_URL}/dating/matches/matched`, {
 
       method: 'GET',
       headers: {
@@ -86,7 +86,7 @@ export default function Matches() {
   function send_seen() {
 
     const id = { id: matches[i]._id }
-    fetch(`https://backend-50ji.onrender.com/dating/matches/seened`, {
+    fetch(`${process.env.REACT_APP_API_URL}/dating/matches/seened`, {
 
       method: 'POST',
       body: JSON.stringify(id),
@@ -109,7 +109,7 @@ export default function Matches() {
 
   function send_like() {
     const id = { id: matches[i]._id }
-    fetch(`https://backend-50ji.onrender.com/dating/matches/liked`, {
+    fetch(`${process.env.REACT_APP_API_URL}/dating/matches/liked`, {
 
       method: 'POST',
       body: JSON.stringify(id),

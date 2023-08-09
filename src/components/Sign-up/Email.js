@@ -25,7 +25,7 @@ export default function Email(props) {
     function sendotp() {
         props.setotp("sending")
         console.log("sendoibg")
-        fetch(`https://backend-50ji.onrender.com/dating/auth/otpgenerator`, {
+        fetch(`${process.env.REACT_APP_API_URL}/dating/auth/otpgenerator`, {
 
             method: 'POST',
             body: JSON.stringify({
